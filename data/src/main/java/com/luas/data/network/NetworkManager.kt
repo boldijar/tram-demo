@@ -6,10 +6,13 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 
 
-object NetworkManager {
+class NetworkManager {
 
-    private const val BASE_URL =
-        "https://luasforecasts.rpa.ie/xml/"
+    companion object {
+        private const val BASE_URL =
+            "https://luasforecasts.rpa.ie/xml/"
+    }
+
 
     private val retrofit: Retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
