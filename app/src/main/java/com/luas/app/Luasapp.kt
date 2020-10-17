@@ -1,6 +1,7 @@
 package com.luas.app
 
 import android.app.Application
+import com.luas.app.base.AppModules
 import com.luas.data.di.DataModules
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
@@ -16,6 +17,7 @@ class Luasapp : Application() {
         startKoin {
             val modulesList = mutableListOf<Module>()
             modulesList.addAll(DataModules.modules)
+            modulesList.addAll(AppModules.modules)
             modules(modulesList)
         }
     }
