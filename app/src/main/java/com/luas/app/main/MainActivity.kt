@@ -32,7 +32,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
                     tramAdapter.submitList(it.viewModels)
                 }
                 is MainViewModel.Command.ShowError -> {
-                    Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.error_getting_forecast, Toast.LENGTH_SHORT).show()
                 }
             }
         })

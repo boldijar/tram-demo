@@ -4,4 +4,5 @@
     <string name="destination">Destination</string>
     <string name="mins">mins</string>
     <string name="there_are_no_trams_available">There are no trams available</string>
+    <string name="error_getting_forecast">Error getting the tram forecast</string>
 </resources>

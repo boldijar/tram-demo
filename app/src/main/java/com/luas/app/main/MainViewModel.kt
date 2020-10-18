@@ -42,7 +42,7 @@ class MainViewModel : BaseViewModel() {
             _showEmpty.postValue(false)
             when (stopInfoResponse) {
                 is ApiResponse.Error -> {
-                    _command.postValue(Command.ShowError(stopInfoResponse.errorMessage))
+                    _command.postValue(Command.ShowError)
                 }
                 is ApiResponse.Success -> {
                     val viewModels = stopInfoToViewModels(stop, stopInfoResponse.result)
@@ -83,6 +83,6 @@ class MainViewModel : BaseViewModel() {
 
     sealed class Command {
         class ShowTram(val viewModels: MutableList<TramItemViewModel>) : Command()
-        class ShowError(val message: String) : Command()
+        object ShowError : Command()
     }
 }
