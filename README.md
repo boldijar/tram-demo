@@ -15,7 +15,8 @@ MVVM, using ViewModels and data binding
 * I've separated the android & UI related logic to the data logic in 2 modules
 * I've decided to implement the function where I see which tram I should look for in a different class so I can also create some unit tests to be sure it's working
 * Using material design because it looks awesome
-
+* Take a look at BaseActivity, is a cool class I always use in my projects (along BaseFragment, BaseDialogFragment, BaseBottomSheet) because it moves the fragment / activity logic out, and I can always switch very easily when I have to.
+* Using suspend functions & coroutines & view model scope for backend requests 
 
 Screenshots:
 ![Image1](ss1.png "Image 1")
