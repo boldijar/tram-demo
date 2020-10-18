@@ -9,29 +9,37 @@
             type="com.luas.app.main.MainViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="@{(v)->viewModel.clicked()}"
-            android:text="@{viewModel.helloWorld}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            visibleOrGone="@{!viewModel.loading}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
         <ProgressBar
             visibleOrGone="@{viewModel.loading}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:indeterminateTint="@color/colorAccent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/colorPrimary" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            visibleOrGone="@{viewModel.showEmpty}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawablePadding="8dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/there_are_no_trams_available"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp"
+            app:drawableBottomCompat="@drawable/ic_cloud_white"
+            app:drawableTint="@color/colorPrimary" />
+
+    </FrameLayout>
 </layout>

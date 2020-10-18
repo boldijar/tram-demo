@@ -17,7 +17,7 @@ class Luasapp : Application() {
         startKoin {
             val modulesList = mutableListOf<Module>()
             modulesList.addAll(DataModules.modules)
-            modulesList.addAll(AppModules.modules)
+            modulesList.addAll(AppModules.buildModules(this@Luasapp))
             modules(modulesList)
         }
     }

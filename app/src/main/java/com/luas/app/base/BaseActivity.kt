@@ -27,9 +27,14 @@ constructor(@LayoutRes private val layoutResource: Int) : AppCompatActivity() {
         }
         setupObservers()
         setupViews()
+        onSetupFinished()
     }
 
     protected open fun setupObservers() {
+
+    }
+
+    protected open fun onSetupFinished(){
 
     }
 
